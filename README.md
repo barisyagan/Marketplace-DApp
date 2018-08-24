@@ -44,7 +44,9 @@ For the conveniece please terminate the ganache session by closing the terminal 
 truffle compile --reset
 truffle migrate --reset
 ```
-
+7. Open a new terminal tab in the app folder again then run web server command:
+```npm run start```
+8. Go to "localhost:3000" in the browser and app website should be waiting for you :)
 
 
 
