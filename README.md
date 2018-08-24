@@ -13,7 +13,6 @@ Store Owner is able to:
 -- Remove the store from the marketplace.  
 -- Withdraw the amount accumulated at the store balance to his personal account.
 #### Shopper
-Shopper is able to:
--- Purchase the product.
+Shopper is able to purchase the product.
 
 
