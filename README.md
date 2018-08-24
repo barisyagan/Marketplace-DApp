@@ -17,7 +17,8 @@ Shopper is able to purchase the product.
 Node.js (https://nodejs.org/en/)  
 NPM (https://www.npmjs.com/get-npm)  
 Truffle (https://truffleframework.com/docs/truffle/getting-started/installation)   
-Ganache-CLI (https://github.com/trufflesuite/ganache-cli/blob/develop/README.md)  
+Ganache-CLI (https://github.com/trufflesuite/ganache-cli/blob/develop/README.md)
+Metamask (https://metamask.io)
 
 
 
