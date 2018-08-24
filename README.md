@@ -47,6 +47,9 @@ truffle migrate --reset
 7. Open a new terminal tab in the app folder again then run web server command:
 ```npm run start```
 8. Go to "localhost:3000" in the browser and app website should be waiting for you :)
+#### Website Interactions
+Metamask by default only show the first account of the ganache, for interacting with the website with different user roles, just click "add account" option at the metamask settings. Add 2-3 new accounts so there will be enough accounts to see what every user role can do. At the admin account's page(I mean the page when account 1 is selected at the metamask) where you give store owner authority, these addresses can be used to give store owner authorization. And by changing the account at the metamask, store owner role and shopper role can be examined.
+
 
 
 
