@@ -10,7 +10,8 @@ Store Owner is able to:
 -- Remove product from the store.  
 -- Modify the product related data such as price and quantity.  
 -- Remove the store from the marketplace.  
--- Withdraw the amount accumulated at the store balance to his personal account.
+-- Withdraw the amount accumulated at the store balance to his personal account.  
+-- See other store owner's products.
 #### Shopper
 Shopper is able to purchase the product.
 ## Prerequisites
