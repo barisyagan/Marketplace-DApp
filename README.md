@@ -28,10 +28,10 @@ In terminal go the downloaded file.
 At here open and another tab. In that tab run Ganache-cli:    
 ```ganache-cli```  
 Then at the previously opened terminal run these commands to run the tests:    
-``` truffle test --reset ```
+``` truffle test --reset ```  
 !!!Important Note!!!  
 Test run should be made on new and clean ganache session:  
-Every time to run tests, existing already used ganache-cli should be terminated (close the tab) and new ganache session (at new terminal session run the command described above) should be started so accounts with required ethers will be assigned again. Because nearly all of the ether that ganache account has, have been consumed at 1 test run.
+Every time to run tests, existing already used ganache-cli should be terminated (close the tab) and new ganache session (at new terminal session run the command described above) should be started so accounts with required ethers will be assigned again. Because nearly all of the ether that ganache account has, have been consumed at 1 test run.  
 !!!Important Note!!!  
 #### Running App And Website
 !!!!Important Note!!!  
