@@ -31,14 +31,14 @@ At here open and another tab. In that tab run Ganache-cli:
 Then at the previously opened terminal run these commands to run the tests:    
 ``` truffle test --reset ```   
 .  
-##### !!! Important Note !!!  
+##### ------ !!! Important Note !!! ------
 Test run should be made on new and clean ganache session:  
 Every time to run tests, existing already used ganache-cli should be terminated (close the tab) and new ganache session (at new terminal session run the command described above) should be started so accounts with required ethers will be assigned again. Because nearly all of the ether that ganache account has, have been consumed at 1 test run.  
-##### !!! Important Note !!!  
+##### ------ ------ 
 #### Running App And Website
-##### !!!! Important Note !!!  
+##### ------ !!!! Important Note !!! ------
 At this stage do not use ganache session that test runs are made on. Use new one. After the test run, close and open a new ganache session (ganache-cli)  
-##### !!!! Important Note !!!  
+##### ------ ------  
 For the conveniece please terminate the ganache session by closing the terminal tab. Then restart a new one as described above. Once the ganache session is started again:  
 1. Find and copy the mnemic key words at the top of the ganache session.  
 2. Open browser and the Metamask extension of the browser.
