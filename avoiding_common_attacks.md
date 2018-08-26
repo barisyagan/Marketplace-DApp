@@ -11,7 +11,7 @@ To avoid integer overflow and underflow all mathematical operations in all of th
 To avoid DoS with (unexpected) revert attacks, pull over push methadology is followed at payment functions. So buyProduct and withdraw store balance to owner functions are independent of each other.
 ### DoS with Block Gas Limit
 To avoid DoS with Block Gas Limit, again pull over push methadology is followed as expalined above. Also at payment functions, any kind of loops are avoided.
-## Forcibly Sending Ether to a Contract
+### Forcibly Sending Ether to a Contract
 No smart contract logic is dependent on smart contract's balance, so our smart contract is nothing to do with contract balance and there is no way that balance of the contract can affect contract's working mechanism.
-## External Contracts and Libraries
+### External Contracts and Libraries
 All of the imported contracts and libraries are well audited and tested resources from Zeppelin. (Ownable, Pausable, SafeMath)
