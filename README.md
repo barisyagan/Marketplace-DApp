@@ -1,6 +1,5 @@
 # Marketplace-DApp
 Please do not start evaluation before reading the important notes below.
-
 ## Description
 This demo applicaiton is a decantralized online marketplace where users can sell & buy their goods and acquire their financial transactions without any 3rd party intervention. In the app there are three user roles:
 #### Admin
@@ -69,9 +68,11 @@ truffle migrate --reset
 ```
 7. Open a new terminal tab in the app folder again then run web server command:  
 ```npm run start```
-8. Go to "localhost:3000" in the browser and app website should be waiting for you :)
+8. Go to "localhost:3000" in the browser and app website should be waiting for you :)  
+  
+App may work slowly especially on virtual box so please wait for the website's response everytime you get in touch with it.
 #### Website Interactions
 Metamask by default only show the first account of the ganache, for interacting with the website with different user roles, just click "add account" option at the metamask settings. Add 2-3 new accounts so there will be enough accounts to see what every user role can do. At the admin account's page(I mean the page when account 1 is selected at the metamask) where you give store owner authority, these addresses can be used to give store owner authorization. And by changing the account at the metamask, store owner role and shopper role can be examined.
 
-At metamask related problems, reset account option at metamask settings or closing and re-openig of te browser may help.
+At metamask related problems, reset account option at metamask settings or closing and re-openig of browser may help.
 
