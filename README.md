@@ -20,7 +20,19 @@ Node.js (https://nodejs.org/en/)
 NPM (https://www.npmjs.com/get-npm)  
 Truffle (https://truffleframework.com/docs/truffle/getting-started/installation)   
 Ganache-CLI (https://github.com/trufflesuite/ganache-cli/blob/develop/README.md)  
-Metamask (https://metamask.io)
+Metamask (https://metamask.io)  
+  
+Here it is how I set up my virtual box with ubuntu for evaluation:  
+After I have installed virtual box and ubuntu on it, I hava started ubuntu on virtual box and opened terminal:    
+1 ¨¨¨sudo apt-get update¨¨¨  
+2 ¨¨¨sudo apt-get install build-essential¨¨¨  
+3 ¨¨¨sudo apt-get install libssl-dev¨¨¨  
+4 ¨¨¨sudo apt-get install curl¨¨¨  
+5 ¨¨¨sudo apt-get install git¨¨¨  
+6 ¨¨¨sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash¨¨¨  
+7 ¨¨¨nvm install node¨¨¨  
+8 ¨¨¨npm install -g truffle¨¨¨
+9 ¨¨¨npm install -g ganache-cli¨¨¨  
 ## Running The App
 Download the app from this repository.
 #### Run Tests
@@ -50,7 +62,7 @@ For the conveniece please terminate the ganache session by closing the terminal 
 truffle compile --reset
 truffle migrate --reset
 ```
-7. Open a new terminal tab in the app folder again then run web server command:
+7. Open a new terminal tab in the app folder again then run web server command:  
 ```npm run start```
 8. Go to "localhost:3000" in the browser and app website should be waiting for you :)
 #### Website Interactions
