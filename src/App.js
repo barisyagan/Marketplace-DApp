@@ -73,7 +73,7 @@ class App extends Component {
     marketplaceSize = marketplaceSize.c[0]
     
     var nameList = await marketplaceInstance.getStoreNameList.call()
-    nameList = nameList.map(name => web3.toAscii(name)) 
+    nameList = nameList.map(name => (web3.toAscii(name).replace(/\0+/g, ''))) 
 
     var balanceList = await marketplaceInstance.getBalances.call()
     balanceList = balanceList.map(number => web3.fromWei(number, 'ether').c[0])
@@ -86,7 +86,7 @@ class App extends Component {
     var totalPNum = 0
     sizeList.map(number => totalPNum += number)
     var productList = await marketplaceInstance.getProductList.call(totalPNum)
-    productList[0] = productList[0].map(name => web3.toAscii(name))
+    productList[0] = productList[0].map(name => (web3.toAscii(name)).replace(/\0+/g, ''))
     productList[1] = productList[1].map(quantity => quantity.c[0])
     productList[2] = productList[2].map(price => price.c[0])
 
@@ -125,14 +125,14 @@ class App extends Component {
     var addProductEvent = contract.AddProduct({}, {fromBlock: '0', toBlock: 'latest'});
     addProductEvent.watch((error, result) => {
       if (!error && result.blockNumber > highestBlock) {
-        this.addProductEventTriggered(web3.toAscii(result.args.name), result.args.quantity.c[0], result.args.price.c[0], result.args.storeId.c[0])
+        this.addProductEventTriggered((web3.toAscii(result.args.name)).replace(/\0+/g, ''), result.args.quantity.c[0], result.args.price.c[0], result.args.storeId.c[0])
       }
     }) 
     
     var addStoreEvent = contract.AddStore({}, {fromBlock: '0', toBlock: 'latest'});
     addStoreEvent.watch((error, result) => {
       if (!error && result.blockNumber > highestBlock) {
-        this.addStoreEventTriggered(web3.toAscii(result.args.name))
+        this.addStoreEventTriggered((web3.toAscii(result.args.name)).replace(/\0+/g, ''))
       }
     })
 
@@ -209,7 +209,7 @@ class App extends Component {
 
   removeStore = (e, storeIndex) => {
     if (this.state.data.length === 1) {
-      this.state.contract.removeStore(storeIndex, {from: this.state.account, gas: 50000})
+      this.state.contract.removeStore(storeIndex, {from: this.state.account, gas: 100000})
     } else {
       this.state.contract.removeStore(storeIndex, {from: this.state.account})
     }
@@ -275,7 +275,7 @@ class App extends Component {
 
   removeProduct = (e, storeIndex, rowIndex) => {
     if (this.state.data[storeIndex].productList.length === 1) {
-      this.state.contract.removeProduct(storeIndex, rowIndex, {from: this.state.account, gas: 50000})
+      this.state.contract.removeProduct(storeIndex, rowIndex, {from: this.state.account, gas: 100000})
     } else {
       this.state.contract.removeProduct(storeIndex, rowIndex, {from: this.state.account})
     }
@@ -311,7 +311,11 @@ class App extends Component {
   buyProduct = (e, storeIndex, productId, quantity) => {
     var total = this.state.data[storeIndex].productList[productId].price * quantity
     var totalInWei = this.state.web3.toWei(total, "ether")
-    this.state.contract.buyProduct(storeIndex, productId, quantity, {from:this.state.account, value: totalInWei})
+    if ((this.state.data[storeIndex].productList[productId].quantity - quantity) === 0) {
+      this.state.contract.buyProduct(storeIndex, productId, quantity, {from:this.state.account, gas: 100000, value: totalInWei})
+    } else {
+      this.state.contract.buyProduct(storeIndex, productId, quantity, {from:this.state.account, value: totalInWei})
+    }
     e.preventDefault()
   }
 
@@ -326,7 +330,7 @@ class App extends Component {
   }
   
   withdraw = (e, storeIndex) => {
-    this.state.contract.withdraw(storeIndex, {from:this.state.account})
+    this.state.contract.withdraw(storeIndex, {from:this.state.account, gas: 100000})
     e.preventDefault()
   }
 
@@ -347,8 +351,8 @@ class App extends Component {
 
   doesAlreadyStoreWithThisNameExists = (storeName) => {
     for (let store of this.state.data) {
-      var tempStoreName = store.storeName.replace(/\0+/g, '')
-      if (tempStoreName === storeName) {
+      //var tempStoreName = store.storeName.replace(/\0+/g, '')
+      if (store.storeName === storeName) {
         return true
       }
     }
@@ -358,8 +362,8 @@ class App extends Component {
   doesAlreadyProductWithThisNameExists = (productName) => {
     for (let store of this.state.data) {
       for (let product of store.productList) {
-        var tempProductName = product.name.replace(/\0+/g, '')
-        if (tempProductName === productName) {
+        //var tempProductName = product.name.replace(/\0+/g, '')
+        if (product.name === productName) {
           return true
         }
       }

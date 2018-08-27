@@ -196,7 +196,7 @@ export default ({
         <form onSubmit={e => giveOwnerAuthority2(e, newAddress, giveOwnerAuthority)}>
             <label>
                 Address:
-                <input className="b" type="text" onChange={handleNewAddressChange}/>
+                <input className="b" type="text" onChange={handleNewAddressChange} required/>
             </label>
             <input type="submit" value="Give Permission To Open Store" /> 
         </form>

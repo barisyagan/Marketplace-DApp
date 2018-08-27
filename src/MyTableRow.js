@@ -91,11 +91,11 @@ export default ({
             <form onSubmit={e => handleSubmit2(e, quantity, price, storeIndex, product.i, editTableIndex, editRowIndex, handleSubmit)}>
                 <label>
                     Quantity:
-                    <input className="a" type="number" min="0" onChange={e => handleQuantityChange(e, storeIndex, product.i)}/>
+                    <input className="a" type="number" min="0" onChange={e => handleQuantityChange(e, storeIndex, product.i)} required/>
                 </label>
                 <label>
                     Price:
-                    <input className="a" type="number" min="0" onChange={e => handlePriceChange(e, storeIndex, product.i)}/>
+                    <input className="a" type="number" min="0" onChange={e => handlePriceChange(e, storeIndex, product.i)} required/>
                 </label>
                 <input type="submit" value="submit" />
             </form>
