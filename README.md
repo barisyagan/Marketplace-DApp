@@ -21,6 +21,8 @@ NPM (https://www.npmjs.com/get-npm)
 Truffle (https://truffleframework.com/docs/truffle/getting-started/installation)   
 Ganache-CLI (https://github.com/trufflesuite/ganache-cli/blob/develop/README.md)  
 Metamask (https://metamask.io)  
+
+Google Chrome seems work better than Firefox with Metamask extension.  
   
 Here it is how I set up my virtual box with ubuntu for evaluation:  
 After I have installed virtual box and ubuntu on it, I hava started ubuntu on virtual box and opened terminal:    
@@ -39,8 +41,8 @@ After I have installed virtual box and ubuntu on it, I hava started ubuntu on vi
 ```npm install```  
 #### Run Tests
 In terminal go the downloaded file.  
-```cd Marketplace-Dapp```  
-At here open and another tab. In that tab run Ganache-cli:    
+```cd Marketplace-Dapp-Master```  
+At here open an another tab. In that tab run Ganache-cli:    
 ```ganache-cli```  
 Then at the previously opened terminal run these commands to run the tests:    
 ``` truffle test --reset ```   
@@ -54,10 +56,10 @@ Every time to run tests, existing already used ganache-cli should be terminated 
 At this stage do not use ganache session that test runs are made on. Use new one. After the test run, close and open a new ganache session (ganache-cli)  
 ##### ------ ------  
 For the conveniece please terminate the ganache session by closing the terminal tab. Then restart a new one as described above. Once the ganache session is started again:  
-1. Find and copy the mnemic key words at the top of the ganache session.  
+1. Find and copy the Mnemonic seed phrases at the top of the ganache session.  
 2. Open browser and the Metamask extension of the browser.
 3. Click " import using account seed phrase " at the metamask. If this option is unavailable changing the network may help.  
-4. Complete step 3 with the seed phrases copied from ganache and wtih your new unimportant password. 
+4. Complete step 3 with the Mnemonic seed phrases copied from ganache and with your new unimportant password. 
 5. Change network at the Metamask to " local host 8545 ".   
 6. In the terminal that opened at the inside of the app folder run these truffle commands:  
 ```
