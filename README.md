@@ -34,7 +34,9 @@ After I have installed virtual box and ubuntu on it, I hava started ubuntu on vi
 8 ```npm install -g truffle```
 9 ```npm install -g ganache-cli```  
 ## Running The App
-Download the app from this repository.
+1. Download the app from this repository.  
+2. Inside of the file downloaded open terminal and command to prepare node_modules file:  
+```npm install```  
 #### Run Tests
 In terminal go the downloaded file.  
 ```cd Marketplace-Dapp```  
