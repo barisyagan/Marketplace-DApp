@@ -31,7 +31,7 @@ After I have installed virtual box and ubuntu on it, I hava started ubuntu on vi
 5 ```sudo apt-get install git```  
 6 ```sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash```  
 7 ```nvm install node```  
-8 ```npm install -g truffle```
+8 ```npm install -g truffle```  
 9 ```npm install -g ganache-cli```  
 ## Running The App
 1. Download the app from this repository.  
